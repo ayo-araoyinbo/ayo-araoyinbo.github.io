@@ -752,7 +752,41 @@
     color: var(--ink-mid);
   }
   .twitter-panel { }
-  .twitter-embed-placeholder { }
+  .media-panel { }
+  .media-video-wrap {
+    width: 100%;
+    border-radius: 3px;
+    overflow: hidden;
+    background: var(--ink);
+    border: 1px solid var(--sand);
+  }
+  .media-video-wrap video {
+    width: 100%;
+    display: block;
+    max-height: 360px;
+    object-fit: contain;
+    background: var(--ink);
+  }
+  .media-video-caption {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    margin-top: 1rem;
+    padding-top: 0.8rem;
+    border-top: 1px solid var(--sand);
+  }
+  .media-video-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.88rem;
+    color: var(--ink);
+    line-height: 1.4;
+  }
+  .media-video-journal {
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    color: var(--terracotta);
+    font-style: italic;
+  }
 
   @media (max-width: 900px) {
     .news-grid { grid-template-columns: 1fr; gap: 3rem; }
@@ -935,7 +969,7 @@
     </a>
   </div>
   <div class="news-grid reveal">
-    <div class="twitter-panel" style="grid-column: 1 / -1; max-width: 600px;">
+    <div class="twitter-panel">
       <div class="feed-header" style="margin-bottom:1.2rem;">
         🦋 ayoaraoyinbo.bsky.social
       </div>
@@ -946,6 +980,21 @@
         link-text="View on Bluesky">
       </bsky-embed>
       <script async src="https://unpkg.com/bsky-embed/dist/bsky-embed.es.js" type="module"></script>
+    </div>
+    <div class="media-panel">
+      <div class="feed-header" style="margin-bottom:1.2rem;">
+        🎬 Video Abstract
+      </div>
+      <div class="media-video-wrap">
+        <video controls preload="metadata">
+          <source src="Araoyinbo et al. G&D video1.mp4" type="video/mp4">
+          Your browser does not support video playback.
+        </video>
+      </div>
+      <div class="media-video-caption">
+        <span class="media-video-title">Araoyinbo, Salat-Canela et al.</span>
+        <span class="media-video-journal">Genes &amp; Development · 2026</span>
+      </div>
     </div>
   </div>
 </section>
